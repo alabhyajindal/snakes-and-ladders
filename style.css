@@ -3,3 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.main {
+  margin: 1rem;
+
+  /* display: grid;
+  grid-template-columns: repeat(10, 4rem);
+  grid-template-rows: repeat(10, 4rem); */
+}
+
+.row {
+  border: 1px solid greenyellow;
+  height: 4rem;
+  display: flex;
+}
+
+.square {
+  border: 1px solid rgb(0, 0, 0);
+  height: 4rem;
+  width: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
