@@ -17,6 +17,7 @@ for (let i = 0; i < 10; i++) {
     const div = document.createElement("div");
     div.classList.add("square");
     div.classList.add(`square-${i * 10 + j + 1}`);
+    div.classList.add(`${i * 10 + j + 1}`);
     rowList[i].appendChild(div);
   }
 }
@@ -56,15 +57,27 @@ const firstPlayer = document.querySelector(".player-1");
 
 // Function to move the players based on the result of the dice
 const move = function (dice) {
-  // Selecting the cell to which to transport the player piece
-  const squareFoo = document.querySelector(`.square-${dice}`);
-  firstPlayer.style.position = "absolute";
-  squareFoo.appendChild(firstPlayer);
+  const initialSquare = document.querySelector(
+    `.square-${currentPosition() + dice}`
+  );
+  console.log(initialSquare);
+  initialSquare.appendChild(firstPlayer);
 };
 
 // Rolling the dice on the click of the button
 roll.addEventListener("click", () => {
   rollingDice();
   const result = document.querySelector(".roll-result");
-  move(result.textContent);
+  move(parseInt(result.textContent));
 });
+
+// Selecting the parent which has the player piece child element
+const currentPosition = function () {
+  for (let i = 0; i < 100; i++) {
+    if (squareList[i].children.length > 0) {
+      return parseInt(squareList[i].classList[2]);
+    }
+  }
+};
+
+currentPosition();
