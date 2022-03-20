@@ -10,11 +10,10 @@ html {
 
 body {
   font-family: sans-serif;
+  margin: 1rem;
 }
 
 .main {
-  margin: 1rem;
-
   /* display: grid;
   grid-template-columns: repeat(10, 4rem);
   grid-template-rows: repeat(10, 4rem); */
@@ -34,17 +33,15 @@ body {
   align-items: center;
   justify-content: space-around; */
   display: grid;
-  grid-template-columns: repeat(2, 1.3rem);
-  column-gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  font-size: larger;
 }
 
 .player {
   height: 1.3rem;
   width: 1.3rem;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .player-1 {
@@ -61,4 +58,38 @@ body {
 
 .player-4 {
   background-color: greenyellow;
+}
+
+.play-area {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-roll {
+  padding: 0.8rem 1.6rem;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.btn-roll:hover {
+  background-color: #ddd;
+}
+
+.btn-roll:active {
+  background-color: #ccc;
+  transform: scale(1.1);
+  transition: all 0.1s ease-out;
+}
+
+.roll-result {
+  font-size: 3rem;
+  transition: all 0.5s;
 }
