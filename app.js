@@ -27,7 +27,7 @@ const squareList = document.querySelectorAll(".square");
 const firstSquare = document.querySelector(".square-91");
 
 // Specifying the number of players for the game
-const playerCount = 4;
+const playerCount = 1;
 
 // Rendering the players to the board
 for (let i = 0; i < playerCount; i++) {
@@ -44,10 +44,27 @@ const result = document.querySelector(".roll-result");
 
 // Function to get a random dice outcome
 const rollingDice = function () {
+  result.style.color = "#333";
   result.textContent = Math.floor(Math.random() * 6) + 1;
+};
+
+// Nodelist of player pieces
+const playerPieces = document.querySelectorAll(".player");
+
+// Selecting the first player element to be moved
+const firstPlayer = document.querySelector(".player-1");
+
+// Function to move the players based on the result of the dice
+const move = function (dice) {
+  // Selecting the cell to which to transport the player piece
+  const squareFoo = document.querySelector(`.square-${dice}`);
+  firstPlayer.style.position = "absolute";
+  squareFoo.appendChild(firstPlayer);
 };
 
 // Rolling the dice on the click of the button
 roll.addEventListener("click", () => {
   rollingDice();
+  const result = document.querySelector(".roll-result");
+  move(result.textContent);
 });

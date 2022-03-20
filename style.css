@@ -33,7 +33,7 @@ body {
   align-items: center;
   justify-content: space-around; */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   justify-items: center;
   align-items: center;
 }
@@ -85,11 +85,11 @@ body {
 
 .btn-roll:active {
   background-color: #ccc;
-  transform: scale(1.1);
+  transform: scale(1.07);
   transition: all 0.1s ease-out;
 }
 
 .roll-result {
   font-size: 3rem;
-  transition: all 0.5s;
+  color: #fff;
 }
