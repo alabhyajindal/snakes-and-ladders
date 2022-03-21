@@ -39,8 +39,8 @@ const rollingDice = function () {
 const firstPlayer = document.querySelector(".player-1");
 
 // Function to move the players based on the result of the dice
-const move = function (dice) {
-  const initialSquare = document.getElementById(currentPosition() + dice);
+const move = function (dice, cPos) {
+  const initialSquare = document.getElementById(cPos + dice);
 
   initialSquare.appendChild(firstPlayer);
 };
@@ -49,7 +49,8 @@ const move = function (dice) {
 roll.addEventListener("click", () => {
   rollingDice();
   const result = document.querySelector(".roll-result");
-  move(parseInt(result.textContent));
+  move(parseInt(result.textContent), currentPosition());
+  climb(currentPosition());
 });
 
 // Selecting the parent which has the player piece child element
@@ -61,13 +62,49 @@ const currentPosition = function () {
   }
 };
 
-currentPosition();
-
 // winning window modal - Sagar
 // wrapper centering - Sagar
 // dice animation - Sagar
 // ladder and snake movements - Alabhya
 // player piece - replace with a good image (should be visible)
-//
-
 // ladder and snake animation - Alabhya (optional, for later)
+
+// Ladder movements based on the bg image
+const inform = document.querySelector(".inform");
+
+const climbingInfo = function () {
+  inform.textContent = "You climbed up the stairs!";
+};
+
+const climb = function (currentPosition) {
+  if (currentPosition === 2) {
+    climbingInfo();
+    move(0, 23);
+  } else if (currentPosition === 8) {
+    climbingInfo();
+    move(0, 34);
+  } else if (currentPosition === 20) {
+    climbingInfo();
+    move(0, 77);
+  } else if (currentPosition === 32) {
+    climbingInfo();
+    move(0, 68);
+  } else if (currentPosition === 41) {
+    climbingInfo();
+    move(0, 79);
+  } else if (currentPosition === 74) {
+    climbingInfo();
+    move(0, 88);
+  } else if (currentPosition === 85) {
+    climbingInfo();
+    move(0, 95);
+  } else if (currentPosition === 82) {
+    climbingInfo();
+    move(0, 100);
+  }
+};
+
+// Snake movements based on bg image
+const fallInfo = function () {
+  inform.textContent = "You were bitten by a snake!";
+};
