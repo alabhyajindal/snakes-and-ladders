@@ -49,20 +49,17 @@ body {
 }
 
 .player-1 {
-  background-color: #ff0000;
-  border: 5px solid #ffff00;
+  background-color: #eb1c24;
+  border: 5px solid #fadc4a;
 }
 
 .player-2 {
-  background-color: yellow;
+  background-color: #5a9cf0;
+  border: 5px solid #25af4f;
 }
 
 .player-3 {
   background-color: blue;
-}
-
-.player-4 {
-  background-color: greenyellow;
 }
 
 .play-area {
@@ -79,9 +76,10 @@ body {
 }
 
 .btn-roll {
-  padding: 0.8rem 1.6rem;
+  padding: 1rem 2rem;
   background-color: #eee;
   border-radius: 5px;
+  font-size: 1.8rem;
 }
 
 .btn-roll:hover {
@@ -97,4 +95,8 @@ body {
 .roll-result {
   font-size: 3rem;
   color: #fff;
+}
+
+.inform {
+  font-size: 2rem;
 }

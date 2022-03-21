@@ -32,8 +32,8 @@ const rollingDice = function () {
   result.textContent = Math.floor(Math.random() * 6) + 1;
 };
 
-// // Nodelist of player pieces
-// const playerPieces = document.querySelectorAll(".player");
+// Nodelist of player pieces
+const playerPieces = document.querySelectorAll(".player");
 
 // Selecting the first player element to be moved
 const firstPlayer = document.querySelector(".player-1");
@@ -67,14 +67,13 @@ const currentPosition = function () {
 // winning window modal - Sagar
 // wrapper centering - Sagar
 // dice animation - Sagar
-// player piece - replace with a good image (should be visible)
 // ladder and snake animation - Alabhya (optional, for later)
 
 // Ladder movements based on the bg image
 const inform = document.querySelector(".inform");
 
 const climbingInfo = function () {
-  inform.textContent = "You climbed up the stairs !";
+  inform.textContent = "You climbed up the stairs!";
 };
 
 const climb = function (currentPosition) {
