@@ -74,6 +74,12 @@ const inform = document.querySelector(".inform");
 
 const climbingInfo = function () {
   inform.textContent = "You climbed up the stairs!";
+  modalImg.src = "https://c.tenor.com/BkBpNinh0UQAAAAC/fireman-ladder.gif";
+  modalHeading.textContent = "Taking the stairs!";
+  modal.showModal();
+  setTimeout(() => {
+    modal.close();
+  }, 2000);
 };
 
 const climb = function (currentPosition) {
@@ -107,6 +113,12 @@ const climb = function (currentPosition) {
 // Snake movements based on bg image
 const fallInfo = function () {
   inform.textContent = "You were bitten by a snake!";
+  modalImg.src = "https://i.gifer.com/ylO.gif";
+  modalHeading.textContent = "You were bitten!";
+  modal.showModal();
+  setTimeout(() => {
+    modal.close();
+  }, 2000);
 };
 
 const fall = function (currentPosition) {
@@ -134,5 +146,21 @@ const fall = function (currentPosition) {
   } else if (currentPosition === 97) {
     fallInfo();
     move(0, 25);
+  } else if (currentPosition === 100) {
+    modalImg.src = "https://i.gifer.com/3aO.gif";
+    modalHeading.textContent = "You reached 100, YOU WIN!!";
+    modal.showModal();
   }
 };
+
+// GIF Modal Window on winning the game
+
+const modal = document.querySelector(".modal");
+const openModal = document.querySelector(".open");
+const closeModal = document.querySelector(".close");
+const modalImg = document.querySelector(".modal-gif");
+const modalHeading = document.querySelector(".modal-heading");
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
