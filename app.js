@@ -7,11 +7,6 @@ const rowList = document.querySelectorAll(".row");
 // Nodelist of 100 squares
 const squareList = document.querySelectorAll(".square");
 
-// Adding an ID to squares based on their content
-for (let i = 0; i < squareList.length; i++) {
-  squareList[i].setAttribute("id", squareList[i].textContent);
-}
-
 // Selecting the first square
 const startSquare = document.getElementById("1");
 
@@ -47,7 +42,6 @@ const firstPlayer = document.querySelector(".player-1");
 const move = function (dice) {
   const initialSquare = document.getElementById(currentPosition() + dice);
 
-  console.log(currentPosition() + dice);
   initialSquare.appendChild(firstPlayer);
 };
 
@@ -68,3 +62,12 @@ const currentPosition = function () {
 };
 
 currentPosition();
+
+// winning window modal - Sagar
+// wrapper centering - Sagar
+// dice animation - Sagar
+// ladder and snake movements - Alabhya
+// player piece - replace with a good image (should be visible)
+//
+
+// ladder and snake animation - Alabhya (optional, for later)
