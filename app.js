@@ -47,10 +47,12 @@ const move = function (dice, cPos) {
 
 // Rolling the dice on the click of the button
 roll.addEventListener("click", () => {
+  inform.textContent = "";
   rollingDice();
   const result = document.querySelector(".roll-result");
   move(parseInt(result.textContent), currentPosition());
   climb(currentPosition());
+  fall(currentPosition());
 });
 
 // Selecting the parent which has the player piece child element
@@ -65,7 +67,6 @@ const currentPosition = function () {
 // winning window modal - Sagar
 // wrapper centering - Sagar
 // dice animation - Sagar
-// ladder and snake movements - Alabhya
 // player piece - replace with a good image (should be visible)
 // ladder and snake animation - Alabhya (optional, for later)
 
@@ -73,7 +74,7 @@ const currentPosition = function () {
 const inform = document.querySelector(".inform");
 
 const climbingInfo = function () {
-  inform.textContent = "You climbed up the stairs!";
+  inform.textContent = "You climbed up the stairs !";
 };
 
 const climb = function (currentPosition) {
@@ -107,4 +108,32 @@ const climb = function (currentPosition) {
 // Snake movements based on bg image
 const fallInfo = function () {
   inform.textContent = "You were bitten by a snake!";
+};
+
+const fall = function (currentPosition) {
+  if (currentPosition === 29) {
+    fallInfo();
+    move(0, 9);
+  } else if (currentPosition === 38) {
+    fallInfo();
+    move(0, 15);
+  } else if (currentPosition === 47) {
+    fallInfo();
+    move(0, 5);
+  } else if (currentPosition === 53) {
+    fallInfo();
+    move(0, 33);
+  } else if (currentPosition === 62) {
+    fallInfo();
+    move(0, 37);
+  } else if (currentPosition === 86) {
+    fallInfo();
+    move(0, 54);
+  } else if (currentPosition === 92) {
+    fallInfo();
+    move(0, 70);
+  } else if (currentPosition === 97) {
+    fallInfo();
+    move(0, 25);
+  }
 };
